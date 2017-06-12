@@ -5,20 +5,7 @@ import Link from 'next/link'
 function Hero(props) {
   return (
     <div className={`relative tc ${props.backgroundClass}`}>
-      <div className="relative mw7 center white pv4">
-        <div className="absolute top-0 right-0">
-          {props.topLinks && props.topLinks.length > 0 && (
-            props.topLinks.map((link, i) => {
-              return (
-                <Link href={link.href} key={i}>
-                  <a className="dib f6 white no-underline pa1 ma1" key={i}>
-                    {link.text}
-                  </a>
-                </Link>
-              )
-            })
-          )}
-        </div>
+      <div className="mw7 center white pv4">
         <div className="pv4">
           <h1 className="f1 normal lh-title ma0 pa0">
             <Link prefetch href="/">
@@ -30,6 +17,19 @@ function Hero(props) {
           <h4 className="normal o-70 ma0 pt2 pb3 ph1">
             {props.subtitle}
           </h4>
+          <div>
+            {props.topLinks && props.topLinks.length > 0 && (
+              props.topLinks.map((link, i) => {
+                return (
+                  <Link href={link.href} key={i}>
+                    <a className="dib f6 white no-underline pa1 ma1" key={i}>
+                      {link.text}
+                    </a>
+                  </Link>
+                )
+              })
+            )}
+          </div>
         </div>
       </div>
     </div>

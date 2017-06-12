@@ -2,7 +2,6 @@ import React from 'react'
 import Page from '../src/components/Page'
 import PagePreview from '../src/components/PagePreview'
 import { formatDate } from '../src/utils/date'
-import hljsTheme from '../src/constants/hljs-atom-one-dark'
 
 import CONFIG from '../content/index.json'
 import SUMMARY_JSON from '../content/summary.json'
@@ -35,7 +34,6 @@ function Index(props) {
         code:not(.hljs) {
           border: 1px solid #DDD;
         }
-        ${hljsTheme}
       `}</style>
       <Page
         siteTitle={CONFIG.siteTitle}

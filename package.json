@@ -1,9 +1,9 @@
 {
-  "name": "blog.timscanlin.net",
+  "name": "next-blog",
   "version": "1.0.0",
-  "description": "Process a directory of markdown and yaml files to JSON files",
+  "description": "Markdown based blog using next.js",
   "main": "index.js",
-  "homepage": "http://blog.timscanlin.net",
+  "homepage": "http://timscanlin.net",
   "twitter": "tim_scanlin",
   "scripts": {
     "start": "node server.js",
@@ -17,6 +17,8 @@
   },
   "keywords": [
     "blog",
+    "next.js",
+    "next",
     "Tim",
     "Scanlin"
   ],
