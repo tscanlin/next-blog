@@ -1,0 +1,35 @@
+{
+  "name": "blog.timscanlin.net",
+  "version": "1.0.0",
+  "description": "Process a directory of markdown and yaml files to JSON files",
+  "main": "index.js",
+  "homepage": "http://blog.timscanlin.net",
+  "twitter": "tim_scanlin",
+  "scripts": {
+    "start": "node server.js",
+    "build": "next build",
+    "build:content": "processmd content/**/*.md --outputDir content --preview 110 --summaryOutput content/summary.json",
+    "build:content:watch": "processmd content/**/*.md --outputDir content --preview 110 --summaryOutput content/summary.json --watch",
+    "build:export": "npm run build && npm run export",
+    "export": "next export && cp -R static/* out/",
+    "deploy": "npm run build:content && npm run build:export && mv out public",
+    "server": "NODE_ENV=production node server.js"
+  },
+  "keywords": [
+    "blog",
+    "Tim",
+    "Scanlin"
+  ],
+  "author": "Tim Scanlin",
+  "license": "MIT",
+  "devDependencies": {
+    "next": "^3.0.0-beta6",
+    "processmd": "^3.1.0",
+    "standard": "^10.0.2"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "styled-jsx": "^1.0.4"
+  }
+}
