@@ -4,8 +4,7 @@ import PagePreview from '../src/components/PagePreview'
 import { formatDate } from '../src/utils/date'
 import { makeUrl, filterArticles } from '../src/utils/content'
 
-import CONFIG from '../src/config.js'
-import PAGE_JSON from '../content/index.json'
+import CONFIG from '../content/index.json'
 import SUMMARY_JSON from '../content/summary.json'
 
 function Index(props) {
