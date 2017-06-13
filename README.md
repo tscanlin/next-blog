@@ -10,6 +10,12 @@ Markdown based blog using next.js
 npm install
 ```
 
+## Build content
+
+```sh
+npm run build:content
+```
+
 ## Run development server
 
 ```sh
