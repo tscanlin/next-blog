@@ -42,6 +42,7 @@ function Index(props) {
       `}</style>
       <Page
         siteTitle={`${CONFIG.siteTitle} - ${pageJson.title}`}
+        heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
         stylesheets={CONFIG.stylesheets}
         topLinks={CONFIG.topLinks}

@@ -10,7 +10,7 @@ function Hero(props) {
           <h1 className="f1 normal lh-title ma0 pa0">
             <Link prefetch href="/">
               <a className="white no-underline" href="/">
-                {props.siteTitle}
+                {props.heroTitle}
               </a>
             </Link>
           </h1>
@@ -39,14 +39,14 @@ function Hero(props) {
 Hero.propTypes = {
   backgroundClass: PropTypes.string,
   topLinks: PropTypes.array,
-  siteTitle: PropTypes.string,
+  heroTitle: PropTypes.string,
   subtitle: PropTypes.string,
 }
 
 Hero.defaultProps = {
   backgroundClass: 'bg-mid-gray',
   topLinks: [],
-  siteTitle: '',
+  heroTitle: '',
   subtitle: '',
 }
 
