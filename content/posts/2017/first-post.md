@@ -7,4 +7,4 @@ First post!
 
 Checkout [github to see my other projects](github.com/tscanlin)
 
-[another page](/custom-post-alias)
+[another page](/custom-post)

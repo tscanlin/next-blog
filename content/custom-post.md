@@ -1,5 +1,5 @@
 ---
-title: First post
+title: Custom post
 date: 2017-06-01
 page: post
 paths:
