@@ -15,7 +15,7 @@ function Page(props) {
       />
       <main className="lh-copy">
         <Hero
-          siteTitle={props.siteTitle}
+          heroTitle={props.heroTitle}
           subtitle={props.description}
           topLinks={props.topLinks}
           backgroundClass={props.backgroundClass}
@@ -33,7 +33,7 @@ function Page(props) {
 }
 
 Page.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
+  heroTitle: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   stylesheets: PropTypes.array,
   topLinks: PropTypes.array,
@@ -41,7 +41,7 @@ Page.propTypes = {
 }
 
 Page.defaultProps = {
-  siteTitle: '',
+  heroTitle: '',
   description: '',
   stylesheets: [
     'https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css'

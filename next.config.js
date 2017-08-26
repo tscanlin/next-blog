@@ -3,9 +3,20 @@ const SUMMARY_JSON = require('./content/summary.json')
 module.exports = {
   exportPathMap: function() {
     const posts = {}
+    const paths = {}
     SUMMARY_JSON.fileMap && Object.keys(SUMMARY_JSON.fileMap)
       .forEach((file) => {
-        if (file.indexOf('content/posts') === 0) {
+        const fileObj = SUMMARY_JSON.fileMap[file]
+        const obj = {}
+        if (fileObj.paths) {
+          // Handle custom paths / aliases.
+          obj.page = fileObj.page
+          obj.query = { filePath: fileObj.filePath }
+          fileObj.paths.forEach((path) => {
+            paths[path] = obj
+          })
+        } else if (file.indexOf('content/posts') === 0) {
+          // Handle posts.
           const page = file.split('content').join('').split('.json').join('')
           posts[page] = {
             page: '/post',
@@ -18,6 +29,6 @@ module.exports = {
 
     return Object.assign({}, {
       '/': { page: '/' }
-    }, posts)
+    }, posts, paths) // aliases
   }
 }

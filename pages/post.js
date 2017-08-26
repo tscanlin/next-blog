@@ -7,10 +7,15 @@ import CONFIG from '../content/index.json'
 import SUMMARY_JSON from '../content/summary.json'
 
 function Index(props) {
-  let pageJson
+  let pageJson = {}
   if (props.url.query) {
-    pageJson = require(`../content${props.url.query.fullUrl}.json`)
+    if (props.url.query.fullUrl) {
+      pageJson = require(`../content${props.url.query.fullUrl}.json`)
+    } else if (props.url.query.filePath) {
+      pageJson = require(`../${props.url.query.filePath}`)
+    }
   }
+
   return (
     <div>
       <style jsx global>{`
@@ -36,7 +41,8 @@ function Index(props) {
         }
       `}</style>
       <Page
-        siteTitle={CONFIG.siteTitle}
+        siteTitle={`${CONFIG.siteTitle} - ${pageJson.title}`}
+        heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
         stylesheets={CONFIG.stylesheets}
         topLinks={CONFIG.topLinks}

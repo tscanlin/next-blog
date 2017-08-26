@@ -11,7 +11,8 @@ function Index(props) {
   return (
     <div>
       <Page
-        siteTitle={CONFIG.siteTitle}
+        siteTitle={`${CONFIG.siteTitle} - Index`}
+        heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
         stylesheets={CONFIG.stylesheets}
         topLinks={CONFIG.topLinks}
