@@ -1,6 +1,6 @@
 # next-blog
 
-Markdown based blog using next.js
+Markdown based blog using next.js. Also using [processmd](https://github.com/tscanlin/processmd) (disclaimer: another project of mine) to compile the markdown files and watch for changes.
 
 [![Mentioned in Awesome Next JS](https://awesome.re/mentioned-badge.svg)](https://github.com/unicodeveloper/awesome-nextjs)
 
