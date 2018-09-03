@@ -8,11 +8,12 @@ import SUMMARY_JSON from '../content/summary.json'
 
 function Index(props) {
   let pageJson = {}
+  console.log(props)
   if (props.url.query) {
     if (props.url.query.fullUrl) {
       pageJson = require(`../content${props.url.query.fullUrl}.json`)
     } else if (props.url.query.filePath) {
-      pageJson = require(`../${props.url.query.filePath}`)
+      // pageJson = require(`../${props.url.query.filePath}`)
     }
   }
 

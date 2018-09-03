@@ -5,3 +5,4 @@ out
 public
 *.log
 content/**/*.json
+package-lock.json
