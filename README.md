@@ -8,6 +8,8 @@ Clone this repo and use it as a starting point for your own blog.
 
 ![next blog screenshot](https://raw.githubusercontent.com/tscanlin/next-blog/master/static/assets/images/next-blog-screenshot.png)
 
+**NOTE:** Make sure to run `npm run build:content` before `npm start` for the first time.
+
 ## Install dependencies
 
 ```sh
