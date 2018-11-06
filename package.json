@@ -28,13 +28,13 @@
   "author": "Tim Scanlin",
   "license": "MIT",
   "devDependencies": {
-    "next": "^6.1.1",
-    "processmd": "^4.2.1",
+    "next": "^7.0.2",
+    "processmd": "^4.4.0",
     "standard": "^12.0.1"
   },
   "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "styled-jsx": "^3.0.2"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "styled-jsx": "^3.1.0"
   }
 }
