@@ -10,8 +10,10 @@ module.exports = {
         const obj = {}
         if (fileObj.paths) {
           // Handle custom paths / aliases.
-          obj.page = fileObj.page
-          obj.query = { filePath: fileObj.filePath }
+          obj.page = '/post'
+          obj.query = {
+            fullUrl: file.match(/^content(.+)\.json$/)[1]
+          }
           fileObj.paths.forEach((path) => {
             paths[path] = obj
           })
