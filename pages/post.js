@@ -8,12 +8,7 @@ import CONFIG from '../content/index.json'
 import SUMMARY_JSON from '../content/summary.json'
 
 function Index(props) {
-  let pageJson = {}
-  if (props.router.query) {
-    if (props.router.query.fullUrl) {
-      pageJson = require(`../content${props.router.query.fullUrl}.json`)
-    }
-  }
+  const pageJson = props.pageJson
 
   return (
     <div>
@@ -61,6 +56,16 @@ function Body(props) {
       <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
     </div>
   )
+}
+
+Index.getInitialProps = async function (req) {
+  if (req.asPath && req.asPath.indexOf('posts') !== -1) {
+    return import(`../content${req.asPath}.json`)
+      .then((d) => {
+        return { pageJson: d.default }
+      })
+  }
+  return {}
 }
 
 export default withRouter(Index)

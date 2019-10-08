@@ -8,7 +8,7 @@ function Hero(props) {
       <div className="mw7 center white pv4">
         <div className="pv4">
           <h1 className="f1 normal lh-title ma0 pa0">
-            <Link prefetch href="/">
+            <Link href="/">
               <a className="white no-underline" href="/">
                 {props.heroTitle}
               </a>
@@ -20,12 +20,16 @@ function Hero(props) {
           <div>
             {props.topLinks && props.topLinks.length > 0 && (
               props.topLinks.map((link, i) => {
-                return (
+                return link.href.indexOf('http') === -1 ? (
                   <Link href={link.href} key={i}>
                     <a className="dib f6 white no-underline pa1 ma1" key={i}>
                       {link.text}
                     </a>
                   </Link>
+                ) : (
+                  <a className="dib f6 white no-underline pa1 ma1" href={link.href} key={i}>
+                    {link.text}
+                  </a>
                 )
               })
             )}
