@@ -59,11 +59,11 @@ function Body(props = {}) {
 }
 
 Index.getInitialProps = async function (req) {
-  if (req.asPath && req.pathname === '/post') {
+  if (req.pathname === '/post') {
     return import(`../content${
       req.query.filePath ? req.query.filePath
         .replace('content', '')
-        .replace('.json', '') : req.asPath
+        .replace('.json', '') : req.query.fullUrl
     }.json`)
       .then((d) => {
         return {
