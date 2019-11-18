@@ -35,7 +35,7 @@ function Index(props) {
         }
       `}</style>
       <Page
-        siteTitle={`${CONFIG.siteTitle} - ${pageJson.title}`}
+        siteTitle={`${CONFIG.siteTitle} - ${pageJson && pageJson.title}`}
         heroTitle={CONFIG.siteTitle}
         description={CONFIG.description}
         stylesheets={CONFIG.stylesheets}
@@ -49,7 +49,7 @@ function Index(props) {
   )
 }
 
-function Body(props) {
+function Body(props = {}) {
   return (
     <div className="content center mw6 pa3 pa4-ns">
       <h1 className="mt0 lh-title">{props.title}</h1>
@@ -59,10 +59,18 @@ function Body(props) {
 }
 
 Index.getInitialProps = async function (req) {
-  if (req.asPath && req.asPath.indexOf('posts') !== -1) {
-    return import(`../content${req.asPath}.json`)
+  if (req.asPath && req.pathname === '/post') {
+    return import(`../content${
+      req.query.filePath ? req.query.filePath
+        .replace('content', '')
+        .replace('.json', '') : req.asPath
+    }.json`)
       .then((d) => {
-        return { pageJson: d.default }
+        return {
+          pageJson: d.default
+        }
+      }).catch((e) => {
+        console.log(e)
       })
   }
   return {}
