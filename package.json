@@ -29,7 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "next": "^10.2.0",
-    "processmd": "^4.6.0",
+    "processmd": "^4.6.1",
     "standard": "^16.0.3"
   },
   "dependencies": {
