@@ -1,6 +1,6 @@
 {
   "name": "next-blog",
-  "version": "3.2.4",
+  "version": "3.2.5",
   "description": "Markdown based blog using next.js",
   "main": "index.js",
   "homepage": "http://timscanlin.net",
